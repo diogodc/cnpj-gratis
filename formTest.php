@@ -1,19 +1,18 @@
 <?php
-require 'vendor/autoload.php';
+    require 'vendor/autoload.php';
 
-if (isset($_POST['cnpj'])) {
-    var_dump(\JansenFelipe\CnpjGratis\CnpjGratis::consulta($_POST['cnpj'], $_POST['captcha'], $_POST['cookie']));
-    die;
-}
+    if (isset($_POST['cnpj'])) {
+        var_dump(\JansenFelipe\CnpjGratis\CnpjGratis::consulta($_POST['cnpj'], $_POST['captcha'], $_POST['cookie']));
+        die;
+    }
 
-$cnpj = '45543915000858';
+    $cnpj = '45543915000858';
 
-$params = \JansenFelipe\CnpjGratis\CnpjGratis::getParams();
-
+    $params = \JansenFelipe\CnpjGratis\CnpjGratis::getParams();
 ?>
 
-
-<img src="<?php echo $params['captchaBase64']; ?>" /><br />
+<img src="<?php echo $params['captchaBase64']; ?>" />
+<br />
 
 <form action="" method="POST">
     <input type="text" name="cnpj" value="<?php echo $cnpj; ?>" />
